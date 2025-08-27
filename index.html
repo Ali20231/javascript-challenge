@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestelsysteem Kantine</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .menu, .bestelling {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+
+        button {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <h2>Menu</h2>
+            <table id="menuTable">
+                <tr>
+                    <th>Artikel</th>
+                    <th>Prijs</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>water</td>
+                    <td>1.50</td>
+                    <td>
+                        <form >
+                            <label for="colaQuantity">Quantity:</label>
+                            <input type="number" id="colaQuantity" name="quantity"
+                            min="1" max="100" onchange="addToOrder('water', 1.50)">  
+                        
+                            <button onclick="addToOrder('water', 1.50)">opnniew</button>
+                        </form>
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>cola</td>
+                    <td>2.00</td>
+                    <td>
+                        <form >
+                            <label for="colaQuantity">Quantity:</label>
+                            <input type="number" id="colaQuantity" name="quantity"
+                            min="1" max="100" onchange="addToOrder('cola', 2.00)">  
+                        
+                            <button onclick="addToOrder('cola', 2.00)">opnieuw</button>
+                        </form>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>hamburger</td>
+                    <td>5.00</td>
+                    <td>
+                        <form >
+                            <label for="colaQuantity">Quantity:</label>
+                            <input type="number" id="colaQuantity" name="quantity"
+                            min="1" max="100" onchange="addToOrder('hamburger', 5.00)">  
+                        
+                            <button onclick="addToOrder('hamburger', 5.00)">opnieuw</button>
+                        </form>
+                    </td>
+               
+                </tr>
+                <tr>
+                    <td>broodjekaas</td>
+                    <td>3.00</td>
+                    <td>
+                        <form >
+                            <label for="colaQuantity">Quantity:</label>
+                            <input type="number" id="colaQuantity" name="quantity"
+                            min="1" max="100" onchange="addToOrder('broodjekaas', 3.00)">  
+                        
+                            <button onclick="addToOrder('broodjekaas', 3.00)">opnieuw</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="bestelling">
+            <h2>Bestelling</h2>
+            <table id="bestellingTable">
+                <tr>
+                    <th>Artikel</th>
+                    <th>Aantal</th>
+                    <th>Prijs</th>
+                </tr>
+            </table>
+            <p id="totalPrice">Totale prijs: 0.00</p>
+        </div>
+        
+
+    <script src="script.js"></script>
+
+</body>
+</html>
